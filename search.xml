@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>11月开发记录</title>
+    <url>/Devlog/2021/01/20/2020-Nov/</url>
+    <content><![CDATA[<h2 id="11月第3周"><a href="#11月第3周" class="headerlink" title="11月第3周"></a>11月第3周</h2><ul>
+<li><code>2020-11-19</code>&emsp;&emsp;解决了前些天遇到的关于<code>glm::rotate</code>的bug，是由于版本不同造成的。在项目目录下有个glm库（版本是0.999），系统目录中也有glm库（版本0.99）。我把项目目录下的glm库添加到头文件查找路径，以为文件查找时只会在项目路径下查找，结果却发现也会在系统路经下查找，最终导致查找到的glm版本不一致。解决方式是将头文件include方式由&lt;&gt;改为””相对路径。</li>
+<li>完成shadow map和纹理映射，但是还存在阴影边缘锯齿的问题。<img src="/Devlog/2021/01/20/2020-Nov/shadow_mapping_edge_alias.png" width="50%" height="50%" title="阴影映射锯齿" alt="阴影映射锯齿"></li>
+<li>在PhysIKA上将cg替换为<code>eigen</code>的<code>suitesparse</code>，发现效果并不好。</li>
+<li>明天打算将显式求解器添加到PhysIKA。</li>
+</ul>
+<ul>
+<li><p><code>2020-11-20</code>&emsp;&emsp;在向PhysIKA添加显式求解器的时候写了一段神奇的代码</p>
+  <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == b)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">define</span> Q</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> Q</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;QQQQ\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>  本来是想通过判断语句控制条件编译的，忘记了条件编译是预编译时期处理的，远在运行时之前。</p>
+</li>
+<li><p>向PhysIKA添加显式求解器。</p>
+</li>
+<li><p>理解了<strong>fast_mass_spring</strong>方法，该方法的确很巧妙，将原长也转化为一个变量来优化，通过交替优化在求解。在PhysIKA中添加fast_mass_spring，求得了solver所需的所有信息，正在写solver。</p>
+</li>
+</ul>
+<h2 id="11月第4周"><a href="#11月第4周" class="headerlink" title="11月第4周"></a>11月第4周</h2><ul>
+<li><code>2020-11-23</code>&emsp;&emsp;向PhysIKA中添加<strong>fast_mass_spring</strong>方法，已经完成开发，但是还存在数据接口问题。</li>
+<li><code>2020-11-25</code>&emsp;&emsp;开始写毕业设计，刚开了个头。</li>
+<li><code>2020-11-26</code>&emsp;&emsp;写了一天毕设．</li>
+<li><code>2020-11-27</code>&emsp;&emsp;写了一天毕设，在ShapeNetSem模型库上跑cut-cell，全部通过．Thingi10k比ShapeNetSem复杂多了，好多模型都是几十万个点，封闭流型检查花了好多时间．</li>
+<li><code>2020-11-29</code>&emsp;&emsp;写了一天实验，在Thingi10k模型库上跑cut-cell，大概有5000+模型是封闭流性，除了８个比较特殊的模型外，其他都成功了．后来在切割面上加了绕动把这８个模型做了．法向一致性检查比较难搞，还没有自动化的方法，只能挨个挨个看．Thingi10k大概有１０来个法向不一致的模型．</li>
+</ul>
+<h2 id="11月第5周"><a href="#11月第5周" class="headerlink" title="11月第5周"></a>11月第5周</h2><ul>
+<li><code>2020-11-30</code>&emsp;&emsp;写了一天毕设，得到ShapeNetSem和Thingi10k两个模型库所有模型cut-cell截图。</li>
+<li>写了一天毕设，添加了切割网格章节。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发记录</category>
+      </categories>
+      <tags>
+        <tag>PhysIKA</tag>
+        <tag>毕业设计</tag>
+      </tags>
+  </entry>
+</search>
