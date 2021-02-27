@@ -39,4 +39,19 @@
         <tag>毕业设计</tag>
       </tags>
   </entry>
+  <entry>
+    <title>2月开发记录</title>
+    <url>/Devlog/2021/02/27/2021-Feb/</url>
+    <content><![CDATA[<h2 id="2月第4周"><a href="#2月第4周" class="headerlink" title="2月第4周"></a>2月第4周</h2><ul>
+<li><code>2021-2-27</code>&emsp;&emsp; 通过Autohotkey映射了习惯键位，同时将vpn和键位映射设置为开机自启。 </li>
+<li>将博客系统搬到win下，安装wsl2。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发环境，win</category>
+      </categories>
+      <tags>
+        <tag>win下开发环境搭建</tag>
+      </tags>
+  </entry>
 </search>
